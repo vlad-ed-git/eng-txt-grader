@@ -10,7 +10,8 @@ app_name = 'web'
 urlpatterns = [
     path('', views.home, name="home"),
     path('home/', views.home, name="home"),
-    path('home/update_word_lists', views.update_word_lists, name="updateWordLists")
+    path('home/update_word_lists', views.update_word_lists, name="updateWordLists"),
+    path('home/update_input_txts', views.update_input_txts, name="updateInputTxts")
 ]
 
 

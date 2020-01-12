@@ -18,7 +18,7 @@ class WordLists(models.Model):
 
 
 class InputTexts(models.Model):
-    input_txts = models.FileField(storage=OverwriteStorage(), upload_to='input_txts')
+    input_txts = models.FileField(storage=OverwriteStorage(), upload_to='input_txts/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
 

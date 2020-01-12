@@ -23,16 +23,26 @@ EngTxtGrader | Home
 <main class="container">
     <div class="row">
         <div class="col-sm">
-            <form enctype="multipart/form-data" method="post" action="">
-                {% csrf_token %}
+            <form enctype="multipart/form-data" method="post" action="/home/update_input_txts">
+               {% csrf_token %}
+                {% if input_txts_notification == "success" %}
+                <div class="alert alert-success" role="alert">
+                    Updated Successfully!
+                </div>
+                {% elif input_txts_notification == "fail" %}
+                <div class="alert alert-danger" role="alert">
+                    Failed to Updated!
+                </div>
+                {% endif %}
+
                 <div class="form-group">
-                    <label for="inputTxtDoc" style="color:green;"> Upload A New File To Grade</label>
-                    <input type="file" class="form-control-file" id="inputTxtDoc"
-                           aria-describedby="inputTxtDocHelpBlock">
-                    <small id="inputTxtDocHelpBlock" class="form-text text-muted">
+                    {{ input_txts_form.as_p }}
+                    <small class="form-text text-muted">
                         The file must be a .pdf, .doc, .docx or .txt file.
                     </small>
                 </div>
+
+                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
             <hr class="my-4">
