@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}
+EngTxtGrader | Home
+{% endblock %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/web/css/home.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">English Text Grader</h1>
+        <hr class="my-4">
+        <p class="lead">Welcome back. </p>
+    </div>
+</div>
+
+<main class="container">
+    <div class="row">
+        <div class="col-sm">
+            <form enctype="multipart/form-data" method="post" action="">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="inputTxtDoc" style="color:green;"> Upload A New File To Grade</label>
+                    <input type="file" class="form-control-file" id="inputTxtDoc"
+                           aria-describedby="inputTxtDocHelpBlock">
+                    <small id="inputTxtDocHelpBlock" class="form-text text-muted">
+                        The file must be a .pdf, .doc, .docx or .txt file.
+                    </small>
+                </div>
+            </form>
+
+            <hr class="my-4">
+
+            <form enctype="multipart/form-data" method="post" action="/home/update_word_lists">
+                {% csrf_token %}
+                {% if word_lists_notification == "success" %}
+                <div class="alert alert-success" role="alert">
+                    Updated Successfully!
+                </div>
+                {% elif word_lists_notification == "fail" %}
+                <div class="alert alert-danger" role="alert">
+                    Failed to Updated!
+                </div>
+                {% endif %}
+
+                <div class="form-group">
+                    {{ word_lists_form.as_p }}
+                    <small class="form-text text-muted">
+                        The file must be a .xlsx file named word_lists.xlsx.<br>
+                        Each grade should be in it's own sheet.<br>
+                        All words of a specific grade, should be placed in the first column of the sheet, starting from
+                        the second row.<br>
+                    </small>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <div class="col-sm-12 col-md-8">
+            <ul class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">
+                    A Short Story : The Clever Fox</a>
+            </ul>
+        </div>
+    </div>
+</main>
+
+
+{% load static %}
+
+
+{% endblock %}
