@@ -24,14 +24,14 @@ EngTxtGrader | Home
     <div class="row">
         <div class="col-sm">
             <form enctype="multipart/form-data" method="post" action="/home/update_input_txts">
-               {% csrf_token %}
+                {% csrf_token %}
                 {% if input_txts_notification == "success" %}
                 <div class="alert alert-success" role="alert">
                     Updated Successfully!
                 </div>
                 {% elif input_txts_notification == "fail" %}
                 <div class="alert alert-danger" role="alert">
-                    Failed to Updated!
+                    Failed to Update!
                 </div>
                 {% endif %}
 
@@ -42,7 +42,7 @@ EngTxtGrader | Home
                     </small>
                 </div>
 
-                 <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
             <hr class="my-4">
@@ -55,7 +55,7 @@ EngTxtGrader | Home
                 </div>
                 {% elif word_lists_notification == "fail" %}
                 <div class="alert alert-danger" role="alert">
-                    Failed to Updated!
+                    Failed to Update!
                 </div>
                 {% endif %}
 
@@ -74,8 +74,15 @@ EngTxtGrader | Home
 
         <div class="col-sm-12 col-md-8">
             <ul class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">
-                    A Short Story : The Clever Fox</a>
+                {% if input_texts %}
+                {% for input_txt in input_texts %}
+                    <a href="/home/grader/{{input_txt}}" class="list-group-item  list-group-item-action black">{{input_txt}}</a>
+                {% endfor %}
+                {% else %}
+                <a href="#" class="list-group-item">
+                    Use input_txts form to add new texts to grade</a>
+                {% endif %}
+
             </ul>
         </div>
     </div>

@@ -11,9 +11,9 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('home/', views.home, name="home"),
     path('home/update_word_lists', views.update_word_lists, name="updateWordLists"),
-    path('home/update_input_txts', views.update_input_txts, name="updateInputTxts")
+    path('home/update_input_txts', views.update_input_txts, name="updateInputTxts"),
+    path('home/grader/<str:input_txt>/', views.grader, name="gradeTxt"),
 ]
-
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
