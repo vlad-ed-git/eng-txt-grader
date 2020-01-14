@@ -1,0 +1,89 @@
+.black{
+    color: #17202a !important;
+}
+
+.blue{
+    color:#0000ff !important;
+}
+
+
+.gradeColor0{
+    color:#145a32 !important; #green shade
+}
+
+.gradeColor1{
+    color:  #7d6608 !important; #yellow shade
+}
+
+.gradeColor2{
+    color:#3498db !important; #blue shade
+}
+
+.gradeColor3{
+ color:#a04000 !important; #brown shade
+}
+
+.gradeColor4{
+ color:#4a235a !important; #purple shade
+}
+
+.gradeColor5{
+ color: #641e16  !important; #red shade
+}
+
+
+.gradeColorBg0{
+    display: inline-block !important;
+    border-radius: 4px !important;
+    padding: 4px 8px 4px 8px !important;
+    color: #ffffff !important;
+    background-color:#145a32 !important;
+}
+
+.gradeColorBg1{
+    display: inline-block !important;
+    border-radius: 4px !important;
+    padding: 4px 8px 4px 8px !important;
+    color: #ffffff !important;
+    background-color:#7d6608 !important;
+}
+
+.gradeColorBg2{
+    display: inline-block !important;
+    border-radius: 4px !important;
+    padding: 4px 8px 4px 8px !important;
+    color: #ffffff !important;
+    background-color:#3498db !important;
+}
+
+.gradeColorBg3{
+    display: inline-block !important;
+    border-radius: 4px !important;
+    padding: 4px 8px 4px 8px !important;
+    color: #ffffff !important;
+    background-color:#a04000 !important;
+}
+
+.gradeColorBg4{
+    display: inline-block !important;
+    border-radius: 4px !important;
+    padding: 4px 8px 4px 8px !important;
+    color: #ffffff !important;
+    background-color:#4a235a !important;
+}
+
+.gradeColorBg5{
+    display: inline-block !important;
+    border-radius: 4px !important;
+    padding: 4px 8px 4px 8px !important;
+    color: #ffffff !important;
+    background-color:#641e16 !important;
+}
+
+.gradeColorBlack{
+    display: inline-block !important;
+    border-radius: 4px !important;
+    padding: 4px 8px 4px 8px !important;
+    color: #ffffff !important;
+background-color: #17202a !important;
+}
