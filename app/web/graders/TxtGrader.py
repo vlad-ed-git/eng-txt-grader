@@ -106,7 +106,7 @@ class TxtGrader:
                                 words_per_grade[grade] = 1
                             already_graded = True
 
-            if "." in word_in_txt:
+            if "." in word_in_txt or "!" in word_in_txt or ":" in word_in_txt:
                 graded_txt += "  <span class='badge badge-info'>" + str(
                     words_per_sentence[total_sentences]) + " words " + str(
                     commas_per_sentence[total_sentences]) + " commas</span><br>"
