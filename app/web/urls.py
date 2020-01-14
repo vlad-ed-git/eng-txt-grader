@@ -12,7 +12,8 @@ urlpatterns = [
     path('home/', views.home, name="home"),
     path('home/update_word_lists', views.update_word_lists, name="updateWordLists"),
     path('home/update_input_txts', views.update_input_txts, name="updateInputTxts"),
-    path('home/grader/<str:input_txt>/', views.grader, name="gradeTxt"),
+    path('home/ajax_grader/', views.ajax_grader),
+    path('home/grader/<str:input_txt>/', views.show_grader_page),
 ]
 
 if settings.DEBUG:

@@ -1,7 +1,9 @@
+import os
+from .graders import TxtGrader
 from django.shortcuts import render
 from .forms import WordListsForm, InputTextsForm
 from django.conf import settings
-import os
+from django.http import JsonResponse
 
 
 # Create your views here.
@@ -50,8 +52,18 @@ def update_input_txts(request):
     return show_home_page(request, input_txts_notification=input_txts_notification)
 
 
-def grader(request, input_txt):
-    # todo os.listdir(os.path.join(settings.MEDIA_ROOT) + "/input_txts/")
+def show_grader_page(request, input_txt):
     return render(request, 'web/grader.html',
                   {'txt_title': input_txt}
                   )
+
+
+def ajax_grader(request):
+    input_txt = request.GET.get('inputTxt', None)
+    input_ext = input_txt.split('.')[1].strip()
+    if input_ext == "txt":
+        grader_obj = TxtGrader.TxtGrader(input_txt)
+        data = grader_obj.begin_grading()
+    else:
+        data = {}
+    return JsonResponse(data)
