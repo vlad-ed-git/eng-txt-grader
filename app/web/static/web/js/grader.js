@@ -18,8 +18,8 @@ $( document ).ready(function() {
             }
           });
 
-
-  $( "#graded_txt" ).on( "click", '#jump_to_page_btn', function() {
+    //skip to page btn
+     $( "#graded_txt" ).on( "click", '#jump_to_page_btn', function() {
     var page_number = $('#page_number').val().trim();
     var input_txt =  $('#input_txt').val();
     if(!$.isNumeric(page_number) || page_number == "0"){
@@ -48,5 +48,11 @@ $( document ).ready(function() {
 
     }
   });
+
+    //toggle grades
+   $( "#color_guide" ).on( "click", '.gradeBtns', function() {
+        toggleClass = '.' + this.id;
+        $(toggleClass).toggle()
+   });
 
 });

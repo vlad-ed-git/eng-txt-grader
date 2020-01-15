@@ -48,10 +48,11 @@ def get_min_in_dictionary(dictionary_obj):
 
 
 def prepare_guide(grades):
-    color_guide = ""
+    color_guide = ''
     for grade_index, grade in enumerate(grades):
-        color_guide = color_guide + '<span class="gradeColorBg' + str(grade_index) + '";>' + grade + '</span>   '
-    color_guide = color_guide + '   <span class="gradeColorBlack";> *Not Graded</span>'
+        color_guide = color_guide + '<span id="gradeColor' + str(grade_index) + '" class="gradeBtns gradeColorBg' + str(
+            grade_index) + '">' + grade + '</span>   '
+    color_guide = color_guide + '   <span id="gradeColorBlack" class="gradeBtns gradeColorBlackBg"> *Not Graded</span>'
     return color_guide
 
 
@@ -79,7 +80,7 @@ def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bold
             words_per_sentence[total_sentences] += 1
             words_counter += 1
 
-        graded_txt = ' <span class="black";>' + word_in_txt + '</span>'
+        graded_txt = ' <span class="gradeColorBlack">' + word_in_txt + '</span>'
 
         already_graded = False
         for grade_index, grade in enumerate(grades):
