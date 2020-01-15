@@ -32,7 +32,16 @@
 }
 
 
+/*********** this is the color of the non-graded txt**********/
+.gradeColorBlack{
+    color: #17202a !important;
+}
+
+
+
 .gradeColorBg0{
+    cursor: pointer;
+    cursor:hand;
     display: inline-block !important;
     border-radius: 4px !important;
     padding: 4px 8px 4px 8px !important;
@@ -41,6 +50,8 @@
 }
 
 .gradeColorBg1{
+    cursor: pointer;
+    cursor:hand;
     display: inline-block !important;
     border-radius: 4px !important;
     padding: 4px 8px 4px 8px !important;
@@ -49,6 +60,8 @@
 }
 
 .gradeColorBg2{
+    cursor: pointer;
+    cursor:hand;
     display: inline-block !important;
     border-radius: 4px !important;
     padding: 4px 8px 4px 8px !important;
@@ -57,6 +70,8 @@
 }
 
 .gradeColorBg3{
+    cursor: pointer;
+    cursor:hand;
     display: inline-block !important;
     border-radius: 4px !important;
     padding: 4px 8px 4px 8px !important;
@@ -65,6 +80,8 @@
 }
 
 .gradeColorBg4{
+    cursor: pointer;
+    cursor:hand;
     display: inline-block !important;
     border-radius: 4px !important;
     padding: 4px 8px 4px 8px !important;
@@ -73,6 +90,8 @@
 }
 
 .gradeColorBg5{
+    cursor: pointer;
+    cursor:hand;
     display: inline-block !important;
     border-radius: 4px !important;
     padding: 4px 8px 4px 8px !important;
@@ -80,10 +99,13 @@
     background-color:#641e16 !important;
 }
 
-.gradeColorBlack{
+/*********** this is the bg-color of the non-graded txt hint**********/
+.gradeColorBlackBg{
+    cursor: pointer;
+    cursor:hand;
     display: inline-block !important;
     border-radius: 4px !important;
     padding: 4px 8px 4px 8px !important;
     color: #ffffff !important;
-background-color: #17202a !important;
+    background-color: #17202a !important;
 }
