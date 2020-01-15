@@ -12,6 +12,14 @@ EngTxtGrader | {{txt_title}}
 
 {% block content %}
 
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/home">
+    <img src="{% static '/web/images/home.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+    Back To Home
+  </a>
+</nav>
+
+
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h4 class="display-6 blue">Grading | <span id="grading_txt">{{txt_title}}</span></h4>
