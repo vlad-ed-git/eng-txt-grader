@@ -17,6 +17,20 @@ EngTxtGrader | Home
         <h1 class="display-4">English Text Grader</h1>
         <hr class="my-4">
         <p class="lead">Welcome back. </p>
+
+
+        <div class="row">
+            <div class="col-sm-6">
+                {% if action_message %}
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    {{ action_message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endif %}
+            </div>
+        </div>
     </div>
 </div>
 
@@ -76,11 +90,23 @@ EngTxtGrader | Home
             <ul class="list-group">
                 {% if input_texts %}
                 {% for input_txt in input_texts %}
-                    <a href="/home/grader/{{input_txt}}" class="list-group-item  list-group-item-action black">{{input_txt}}</a>
+                <li class="list-group-item  list-group-item-action">
+                    <a href="/home/grader/{{input_txt}}" class="black">{{input_txt}}
+                    </a><a href="/home/grader/{{input_txt}}" class="badge badge-primary">Grade</a>
+                    <a href="/home/delete/{{input_txt}}" class="badge badge-danger">Delete</a>
+                </li>
                 {% endfor %}
                 {% else %}
-                <a href="#" class="list-group-item">
-                    Use input_txts form to add new texts to grade</a>
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">OOps, it's empty here!</h4>
+                    <p>It appears there are no text files to grade!</br>
+                        Use the top <strong>input_txts</strong> form on the left, to add new texts to grade.</br>
+                        Click <strong>browse</strong>, select the file from your computer, then click
+                        <strong>submit</strong>.</p>
+                    <hr>
+                    <p class="mb-0">Note that only .txt, .docx and .pdf files are supported.</br>*If your document is a
+                        .doc file, open it with an updated version of MS. Word and save it as a .docx file.</p>
+                </div>
                 {% endif %}
 
             </ul>

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+EngTxtGrader | {{txt_title}}
+{% endblock %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/web/css/home.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/home">
+    <img src="{% static '/web/images/home.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+    Back To Home
+  </a>
+</nav>
+
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h4 class="display-6 blue">Deleting | <span id="grading_txt">{{txt_title}}</span></h4>
+        <hr class="my-4">
+        <p><kbd>click delete to confirm action...</kbd>
+         <a href="/home/confirmed_delete/{{txt_title}}" class="badge badge-danger">Delete</a>
+         </p>
+    </div>
+</div>
+
+
+
+{% load static %}
+
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static '/web/js/deleter.js' %}"></script>
+{% endblock %}

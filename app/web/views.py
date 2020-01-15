@@ -1,5 +1,6 @@
 import os
 from .graders import TxtGrader, PdfGrader, DocxGrader
+from .utils import DeleteFiles
 from django.shortcuts import render
 from .forms import WordListsForm, InputTextsForm
 from django.conf import settings
@@ -9,7 +10,7 @@ from django.middleware import csrf
 
 
 # Create your views here.
-def show_home_page(request, input_txts_notification=None, word_lists_notification=None):
+def show_home_page(request, input_txts_notification=None, word_lists_notification=None, action_message=None):
     # prep empty forms
     input_txts_form = InputTextsForm()
     word_lists_form = WordListsForm()
@@ -21,7 +22,8 @@ def show_home_page(request, input_txts_notification=None, word_lists_notificatio
         'input_txts_form': input_txts_form,
         'word_lists_form': word_lists_form,
         'input_txts_notification': input_txts_notification,
-        'word_lists_notification': word_lists_notification
+        'word_lists_notification': word_lists_notification,
+        'action_message': action_message
     })
 
 
@@ -58,6 +60,21 @@ def show_grader_page(request, input_txt):
     return render(request, 'web/grader.html',
                   {'txt_title': input_txt}
                   )
+
+
+def show_delete_page(request, input_txt):
+    return render(request, 'web/delete.html',
+                  {'txt_title': input_txt})
+
+
+# called when user confirms deletion
+def confirmed_delete(request, input_txt):
+    success = DeleteFiles.delete_file(file_name_with_ext=input_txt)
+    if success:
+        action_message = "Successfully Deleted " + input_txt
+    else:
+        action_message = "Failed to Delete" + input_txt
+    return show_home_page(request, action_message=action_message)
 
 
 def ajax_grader(request):
@@ -106,6 +123,6 @@ def generateHeaderWithJumpToPage(request, query, current_page):
     return '<kbd>Now Showing Page ' + str(current_page) + '</kbd><form class="form-inline" <input type="hidden" ' \
                                                           'name="csrfmiddlewaretoken" value="' + str(token) + \
            '"><input type="hidden" id="input_txt" name="input_txt" value="' + str(query) + '"><label class="sr-only" ' \
-           'for="page_number">Name</label><input type="text" class="form-control mb-2 mr-sm-2" id="page_number" ' \
-           'name="page_number" placeholder="Enter Page No." required><button id="jump_to_page_btn" ' \
-           'type="button" class="btn btn-primary mb-2">Jump To Page</button></form><br><p class="font-weight-bolder">'
+                                                                                           'for="page_number">Name</label><input type="text" class="form-control mb-2 mr-sm-2" id="page_number" ' \
+                                                                                           'name="page_number" placeholder="Enter Page No." required><button id="jump_to_page_btn" ' \
+                                                                                           'type="button" class="btn btn-primary mb-2">Jump To Page</button></form><br><p class="font-weight-bolder">'
