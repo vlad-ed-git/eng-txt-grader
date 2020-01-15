@@ -1,10 +1,10 @@
 # eng-txt-grader
 
-Requirements 
+Requirements: 
   Python 3
   virtualenv
   
-Requirements after setting up environment
+Requirements after setting up environment:
   Django
   Django[argon2]
   Django[bcyrpt]
