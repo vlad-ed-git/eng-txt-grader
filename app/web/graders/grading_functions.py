@@ -72,7 +72,8 @@ def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bold
     special_words = {'for': 0, 'and': 0, 'not': 0, 'but': 0, 'so': 0, 'or': 0}
     special_words_result = ""
     words_per_grade = {}
-    for word_in_txt in words_to_grade:
+    for word_to_grade in words_to_grade:
+        word_in_txt = word_to_grade.strip()
         if len(word_in_txt) == 1 and (word_in_txt.isalpha() or word_in_txt.isdigit()):
             words_per_sentence[total_sentences] += 1
             words_counter += 1
@@ -100,9 +101,9 @@ def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bold
                         already_graded = True
 
         if "." in word_in_txt or "!" in word_in_txt or ":" in word_in_txt or "?" in word_in_txt:
-            graded_txt += "  <span class='badge badge-info'>" + str(
+            graded_txt += "<br><span class='badge badge-info'>" + str(
                 words_per_sentence[total_sentences]) + " words " + str(
-                commas_per_sentence[total_sentences]) + " commas</span><br>"
+                commas_per_sentence[total_sentences]) + " commas</span><br><br>"
             total_sentences += 1
             words_per_sentence[total_sentences] = 0
             commas_per_sentence[total_sentences] = 0
@@ -112,7 +113,7 @@ def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bold
 
         special_words_result = ""
         for key in special_words:
-            word_to_check = word_in_txt.lower().strip()
+            word_to_check = word_in_txt.lower()
             letters_in_word = ''.join(ch for ch in word_to_check if ch.isalpha())
             if key == letters_in_word:
                 special_words[key] = special_words[key] + 1

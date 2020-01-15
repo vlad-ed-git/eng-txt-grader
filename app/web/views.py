@@ -1,5 +1,5 @@
 import os
-from .graders import TxtGrader, PdfGrader
+from .graders import TxtGrader, PdfGrader, DocxGrader
 from django.shortcuts import render
 from .forms import WordListsForm, InputTextsForm
 from django.conf import settings
@@ -71,6 +71,9 @@ def ajax_grader(request):
         output_html_header = generateHeaderWithJumpToPage(request, query=input_txt, current_page=(page_num + 1))
         grader_obj = PdfGrader.PdfGrader(input_txt, page_nums_as_list=[0])
         data = begin_grading(words_to_grade=grader_obj.words_in_page, output_html_header=output_html_header)
+    elif input_ext == "docx":
+        grader_obj = DocxGrader.DocxGrader(input_txt)
+        data = begin_grading(words_to_grade=grader_obj.words_in_doc)
     else:
         data = {}
     return JsonResponse(data)
@@ -84,7 +87,7 @@ def ajax_page_grader(request):
         page_as_num = int(page_num.strip())
         if input_ext == "pdf":
             output_html_header = generateHeaderWithJumpToPage(request, query=input_txt, current_page=page_as_num)
-            grader_obj = PdfGrader.PdfGrader(input_txt, page_nums_as_list=[page_as_num-1])
+            grader_obj = PdfGrader.PdfGrader(input_txt, page_nums_as_list=[page_as_num - 1])
             data = begin_grading(words_to_grade=grader_obj.words_in_page, output_html_header=output_html_header)
         else:
             data = {}
@@ -100,10 +103,9 @@ def getToken(request):
 
 def generateHeaderWithJumpToPage(request, query, current_page):
     token = getToken(request)
-    return '<kbd>Now Showing Page ' + str(current_page) + '</kbd><form class="form-inline" <input ' \
-                                                          'type="hidden" name="csrfmiddlewaretoken" value="' \
-           + str(token) + '"><input type="hidden" id="input_txt" name="input_txt" value="' + str(
-        query) + '"><label class="sr-only" ' \
-                 'for="page_number">Name</label><input type="text" class="form-control mb-2 mr-sm-2" id="page_number" name="page_number" ' \
-                 'placeholder="Enter Page No." required><button id="jump_to_page_btn" type="button" class="btn btn-primary mb-2">Jump To ' \
-                 'Page</button></form><br><p class="font-weight-bolder"> '
+    return '<kbd>Now Showing Page ' + str(current_page) + '</kbd><form class="form-inline" <input type="hidden" ' \
+                                                          'name="csrfmiddlewaretoken" value="' + str(token) + \
+           '"><input type="hidden" id="input_txt" name="input_txt" value="' + str(query) + '"><label class="sr-only" ' \
+           'for="page_number">Name</label><input type="text" class="form-control mb-2 mr-sm-2" id="page_number" ' \
+           'name="page_number" placeholder="Enter Page No." required><button id="jump_to_page_btn" ' \
+           'type="button" class="btn btn-primary mb-2">Jump To Page</button></form><br><p class="font-weight-bolder">'
