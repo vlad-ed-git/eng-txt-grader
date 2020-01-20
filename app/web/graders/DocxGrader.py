@@ -11,7 +11,6 @@ class DocxGrader:
         self.words_in_doc = []
         total_paragraphs = 0
         for p in document.paragraphs:
-            print(p.text)
             total_paragraphs += 1
             self.words_in_doc.extend(p.text.split())
             last_item = self.words_in_doc[-1]

@@ -17,6 +17,7 @@ urlpatterns = [
     path('home/confirmed_delete/<str:input_txt>/', views.confirmed_delete),
     path('home/ajax_grader/', views.ajax_grader),
     path('home/ajax_grader/page/', views.ajax_page_grader),
+    path('home/file_downloader/', views.file_downloader)
 ]
 
 if settings.DEBUG:

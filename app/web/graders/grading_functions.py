@@ -4,6 +4,7 @@ import pandas as pd
 from pandas import ExcelWriter
 from pandas import ExcelFile
 from django.conf import settings
+from .CreateDownloadableList import getDownloadableList
 
 
 def get_avg_in_dictionary(dictionary_obj):
@@ -56,7 +57,8 @@ def prepare_guide(grades):
     return color_guide
 
 
-def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bolder'>"):
+def begin_grading(og_file_name, words_to_grade, output_html_header="<p class='font-weight-bolder'>",
+                  form_crsf_input=None, page_num = None):
     word_lists_file_path = os.path.join(settings.MEDIA_ROOT) + "/word_lists/word_lists.xlsx"
     word_list_file = pd.read_excel(word_lists_file_path, sheet_name=None)
     grades = word_list_file.keys()
@@ -71,7 +73,7 @@ def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bold
     commas_per_sentence = {total_sentences: 0}
     special_words = {'for': 0, 'and': 0, 'not': 0, 'but': 0, 'so': 0, 'or': 0}
     special_words_result = ""
-    words_per_grade = {}
+    words_per_grade = {'Not Graded': set()}
     unique_words = set()
     for word_to_grade in words_to_grade:
         word_in_txt = word_to_grade.strip()
@@ -81,10 +83,12 @@ def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bold
             words_per_sentence[total_sentences] += 1
             words_counter += 1
             unique_words.add(word_only_alpha)
+            words_per_grade['Not Graded'].add(word_only_alpha)
         elif len(word_only_alpha) > 1:
             words_per_sentence[total_sentences] += 1
             words_counter += 1
             unique_words.add(word_only_alpha)
+            words_per_grade['Not Graded'].add(word_only_alpha)
 
         graded_txt = ' <span class="gradeColorBlack">' + word_in_txt + '</span>'
 
@@ -100,9 +104,14 @@ def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bold
                         graded_txt = ' <span class="gradeColor' + str(
                             grade_index) + '">' + word_in_txt + '</span>'
                         try:
-                            words_per_grade[grade] += 1
+                            words_per_grade['Not Graded'].remove(word_only_alpha)
                         except KeyError:
-                            words_per_grade[grade] = 1
+                            pass
+                        try:
+                            words_per_grade[grade].add(word_only_alpha)
+                        except KeyError:
+                            words_per_grade[grade] = set()
+                            words_per_grade[grade].add(word_only_alpha)
                         already_graded = True
 
         if "." in word_in_txt or "!" in word_in_txt or ":" in word_in_txt or "?" in word_in_txt:
@@ -147,7 +156,7 @@ def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bold
 
     grading_results += "<p class='text-monospace' >Grades: "
     for key, item in words_per_grade.items():
-        grading_results += "<br><span class='badge badge-primary'> " + str(item) + " " + key + " words</span>"
+        grading_results += "<br><span class='badge badge-primary'> " + str(len(item)) + " " + key + " words</span>"
     grading_results += "</p>"
 
     """
@@ -155,6 +164,7 @@ def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bold
     grading_results += "<p class='font-weight-bold' >Final Grade:<br><span class='badge badge-warning'> " + str(
         grade) + "</span></p>"
     """
-
+    grading_results += "<p>Available Downloads : </p>" + getDownloadableList(og_file_name, words_per_grade,
+                                                                             form_crsf_input, page_num)
     return {'color_guide': color_guide, 'graded_txt': output_html,
             'grading_results': grading_results}
