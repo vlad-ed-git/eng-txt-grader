@@ -79,7 +79,7 @@ def confirmed_delete(request, input_txt):
 
 def ajax_grader(request):
     input_txt = request.GET.get('inputTxt', None)
-    input_ext = input_txt.split('.')[1].lower().strip()
+    input_ext = input_txt.split('.')[-1].lower().strip()
     if input_ext == "txt":
         grader_obj = TxtGrader.TxtGrader(input_txt)
         data = begin_grading(words_to_grade=grader_obj.words_in_txt)

@@ -150,9 +150,11 @@ def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bold
         grading_results += "<br><span class='badge badge-primary'> " + str(item) + " " + key + " words</span>"
     grading_results += "</p>"
 
+    """
     grade = get_max_val_key_in_dictionary(words_per_grade)
     grading_results += "<p class='font-weight-bold' >Final Grade:<br><span class='badge badge-warning'> " + str(
         grade) + "</span></p>"
+    """
 
     return {'color_guide': color_guide, 'graded_txt': output_html,
             'grading_results': grading_results}
