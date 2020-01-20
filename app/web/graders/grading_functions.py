@@ -90,7 +90,9 @@ def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bold
             for col_name in word_list_file[grade]:
                 grade_words = word_list_file[grade][col_name]
                 for grade_word in grade_words:
-                    if word_in_txt.lower().strip() == grade_word.lower().strip():
+                    lower_stripped_word = word_in_txt.lower().strip()
+                    word_only_alpha = "".join([c if c.isalpha() else "" for c in lower_stripped_word])
+                    if word_only_alpha == grade_word.lower().strip():
                         # grade the found word
                         graded_txt = ' <span class="gradeColor' + str(
                             grade_index) + '">' + word_in_txt + '</span>'

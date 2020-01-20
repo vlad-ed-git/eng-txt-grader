@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="38777ea6-7a0e-4572-b85e-7a7f39ff896d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/input_txts/black_cat.docx" beforeDir="false" afterPath="$PROJECT_DIR$/media/input_txts/black_cat.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/input_txts/the_three_little_pigs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/web/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/web/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/graders/grading_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/graders/grading_functions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +12,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/graders/grading_functions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="94" column="38" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -31,6 +40,8 @@
       <find>print</find>
       <find>;</find>
       <find>self.words_in_doc[-1]</find>
+      <find>check</find>
+      <find>word_to_g</find>
     </findStrings>
     <replaceStrings>
       <replace>last_item</replace>
@@ -50,13 +61,13 @@
         <option value="$PROJECT_DIR$/web/graders/DocXGrader.py" />
         <option value="$PROJECT_DIR$/web/graders/PdfGrader.py" />
         <option value="$PROJECT_DIR$/web/graders/DocxGrader.py" />
-        <option value="$PROJECT_DIR$/web/graders/grading_functions.py" />
         <option value="$PROJECT_DIR$/web/templates/web/grader.html" />
         <option value="$PROJECT_DIR$/web/urls.py" />
         <option value="$PROJECT_DIR$/web/templates/web/delete.html" />
         <option value="$PROJECT_DIR$/web/utils/DeleteFiles.py" />
         <option value="$PROJECT_DIR$/web/views.py" />
         <option value="$PROJECT_DIR$/web/templates/web/home.html" />
+        <option value="$PROJECT_DIR$/web/graders/grading_functions.py" />
       </list>
     </option>
   </component>
@@ -70,7 +81,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="21" />
     <option name="width" value="1281" />
     <option name="height" value="696" />
@@ -83,7 +94,28 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="graders" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
     </panes>
   </component>
@@ -128,6 +160,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14535345" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -140,7 +173,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3294702" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3294702" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.60264903" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.049668875" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3294702" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -244,16 +277,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/graders/grading_functions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="18" selection-start-line="18" selection-end-line="24" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/graders/TxtGrader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -290,6 +313,16 @@
           <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
           <folding>
             <element signature="n#div#0;n#div#0;n#main#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/graders/grading_functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="94" column="38" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
