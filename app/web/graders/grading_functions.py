@@ -72,14 +72,19 @@ def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bold
     special_words = {'for': 0, 'and': 0, 'not': 0, 'but': 0, 'so': 0, 'or': 0}
     special_words_result = ""
     words_per_grade = {}
+    unique_words = set()
     for word_to_grade in words_to_grade:
         word_in_txt = word_to_grade.strip()
-        if len(word_in_txt) == 1 and (word_in_txt.isalpha() or word_in_txt.isdigit()):
+        lower_stripped_word = word_in_txt.lower().strip()
+        word_only_alpha = "".join([c if c.isalpha() else "" for c in lower_stripped_word])
+        if len(word_only_alpha) == 1:
             words_per_sentence[total_sentences] += 1
             words_counter += 1
-        elif len(word_in_txt) > 1:
+            unique_words.add(word_only_alpha)
+        elif len(word_only_alpha) > 1:
             words_per_sentence[total_sentences] += 1
             words_counter += 1
+            unique_words.add(word_only_alpha)
 
         graded_txt = ' <span class="gradeColorBlack">' + word_in_txt + '</span>'
 
@@ -90,8 +95,6 @@ def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bold
             for col_name in word_list_file[grade]:
                 grade_words = word_list_file[grade][col_name]
                 for grade_word in grade_words:
-                    lower_stripped_word = word_in_txt.lower().strip()
-                    word_only_alpha = "".join([c if c.isalpha() else "" for c in lower_stripped_word])
                     if word_only_alpha == grade_word.lower().strip():
                         # grade the found word
                         graded_txt = ' <span class="gradeColor' + str(
@@ -128,8 +131,10 @@ def begin_grading(words_to_grade, output_html_header="<p class='font-weight-bold
     avg_words_per_sentence = get_avg_in_dictionary(words_per_sentence)
     max_words_in_sentence = get_max_in_dictionary(words_per_sentence)
     min_words_in_sentence = get_min_in_dictionary(words_per_sentence)
-    grading_results = "<p class='text-monospace' >Words: <span class='badge badge-primary'>" + str(
+    grading_results = "<p class='text-monospace' >Total Word Count: <span class='badge badge-primary'>" + str(
         words_counter) + "</span></p>"
+    grading_results += "<p class='text-monospace' >Unique Words Count: <span class='badge badge-primary'>" + str(
+        len(unique_words)) + "</span></p>"
     grading_results += "<p class='text-monospace' >Sentences: <span class='badge badge-primary'>" + str(
         total_sentences) + "</span></p>"
     grading_results += "<p class='text-monospace' >Average number of words per sentence: <span class='badge " \
