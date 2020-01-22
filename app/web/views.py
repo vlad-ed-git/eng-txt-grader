@@ -1,4 +1,6 @@
 import os
+from django.conf import settings
+from .graders.grader_constants import *
 from .graders import TxtGrader, PdfGrader, DocxGrader
 from .utils import DeleteFiles
 from django.shortcuts import render
@@ -79,66 +81,33 @@ def confirmed_delete(request, input_txt):
 
 
 def ajax_grader(request):
-    input_txt = request.GET.get('inputTxt', None)
-    file_name = input_txt.split('.')
-    input_ext = file_name[-1].lower().strip()
-    file_name_no_ext = file_name[0].lower().strip()
+    input_file_name = request.GET.get('inputTxt', None)
+    file_name_components = input_file_name.split('.')
+    file_extension = file_name_components[-1].lower().strip()
+    file_name_no_ext = file_name_components[0].lower().strip()
     form_crsf_input = getTokenInput(request)
-    if input_ext == "txt":
-        grader_obj = TxtGrader.TxtGrader(input_txt)
-        data = begin_grading(og_file_name=file_name_no_ext, words_to_grade=grader_obj.words_in_txt,
-                             form_crsf_input=form_crsf_input)
-    elif input_ext == "pdf":
-        page_num = 0
-        output_html_header = generateHeaderWithJumpToPage(request, query=input_txt, current_page=(page_num + 1))
-        grader_obj = PdfGrader.PdfGrader(input_txt, page_nums_as_list=[0])
-        data = begin_grading(og_file_name=file_name_no_ext, words_to_grade=grader_obj.words_in_page,
-                             output_html_header=output_html_header, form_crsf_input=form_crsf_input, page_num=page_num)
-    elif input_ext == "docx":
-        grader_obj = DocxGrader.DocxGrader(input_txt)
-        data = begin_grading(og_file_name=file_name_no_ext, words_to_grade=grader_obj.words_in_doc,
-                             form_crsf_input=form_crsf_input)
+    input_file_path = os.path.join(settings.MEDIA_ROOT) + '\\' + INPUT_TXTS_DIR_NAME + '\\' + input_file_name
+    if file_extension == "txt":
+        words_in_txt = TxtGrader.extract_words_from_txt_file(input_file_path)
+        grade_results_html = grade_txt(words_to_grade_as_list=words_in_txt, form_crsf_input=form_crsf_input,
+                                       input_file_name_no_ext=file_name_no_ext)
+    elif file_extension == "pdf":
+        words_in_pdf = PdfGrader.extract_words_from_pdf_file(input_file_path)
+        grade_results_html = grade_txt(input_file_name_no_ext=file_name_no_ext, words_to_grade_as_list=words_in_pdf,
+                                       form_crsf_input=form_crsf_input)
+    elif file_extension == "docx":
+        words_in_doc = DocxGrader.extract_words_from_docx_file(input_file_path)
+        grade_results_html = grade_txt(input_file_name_no_ext=file_name_no_ext, words_to_grade_as_list=words_in_doc,
+                                       form_crsf_input=form_crsf_input)
     else:
-        data = {}
-    return JsonResponse(data)
-
-
-def ajax_page_grader(request):
-    input_txt = request.GET.get("input_txt", None)
-    page_num = request.GET.get("page_number", None)
-    file_name = input_txt.split('.')
-    input_ext = file_name[-1].lower().strip()
-    file_name_no_ext = file_name[0].lower().strip()
-    form_crsf_input = getTokenInput(request)
-    if page_num.isnumeric():
-        page_as_num = int(page_num.strip())
-        if input_ext == "pdf":
-            output_html_header = generateHeaderWithJumpToPage(request, query=input_txt, current_page=page_as_num)
-            grader_obj = PdfGrader.PdfGrader(input_txt, page_nums_as_list=[page_as_num - 1])
-            data = begin_grading(og_file_name=file_name_no_ext, words_to_grade=grader_obj.words_in_page,
-                                 output_html_header=output_html_header, form_crsf_input=form_crsf_input,
-                                 page_num=page_num)
-        else:
-            data = {}
-    else:
-        output_html_header = generateHeaderWithJumpToPage(request, query=input_txt, current_page=0)
-        data = {"graded_txt": output_html_header}
-    return JsonResponse(data)
+        grade_results_html = {}
+    return JsonResponse(grade_results_html)
 
 
 def getTokenInput(request):
     token = csrf.get_token(request)
     token_input_html = '<input type = "hidden" name = "csrfmiddlewaretoken" value = "' + str(token) + '">'
     return token_input_html
-
-
-def generateHeaderWithJumpToPage(request, query, current_page):
-    return '<kbd>Now Showing Page ' + str(current_page) + '</kbd><form class="form-inline" ' + getTokenInput(
-        request) + '<input type="hidden" id="input_txt" name="input_txt" value="' + str(
-        query) + '"><label class="sr-only" ' \
-                 'for="page_number">Name</label><input type="text" class="form-control mb-2 mr-sm-2" id="page_number" ' \
-                 'name="page_number" placeholder="Enter Page No." required><button id="jump_to_page_btn" ' \
-                 'type="button" class="btn btn-primary mb-2">Jump To Page</button></form><br><p class="font-weight-bolder">'
 
 
 def file_downloader(request):

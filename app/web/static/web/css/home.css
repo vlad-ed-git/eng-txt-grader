@@ -1,3 +1,8 @@
+label{
+    color: #17202a !important;
+    font-weight : bold !important;
+}
+
 .black{
     color: #17202a !important;
 }
@@ -7,106 +12,79 @@
 }
 
 
+.gradeBtns{
+    cursor: pointer;
+    cursor:hand;
+    display: inline-block !important;
+    border-radius: 4px !important;
+    padding: 4px 8px 4px 8px !important;
+}
 
-.gradeColor0{
+
+/*************************** add colors for grades *********************/
+
+.gradedWordsColor0{
     color:#145a32 !important; #green shade
 }
 
-.gradeColor1{
+.gradedWordsColor1{
     color:  #7d6608 !important; #yellow shade
 }
 
-.gradeColor2{
+.gradedWordsColor2{
     color:#3498db !important; #blue shade
 }
 
-.gradeColor3{
+.gradedWordsColor3{
  color:#a04000 !important; #brown shade
 }
 
-.gradeColor4{
+.gradedWordsColor4{
  color:#4a235a !important; #purple shade
 }
 
-.gradeColor5{
+.gradedWordsColor5{
  color: #641e16  !important; #red shade
 }
 
-
-/*********** this is the color of the non-graded txt**********/
-.gradeColorBlack{
+.nonGradedWordsColor{
     color: #17202a !important;
 }
 
 
 
-.gradeColorBg0{
-    cursor: pointer;
-    cursor:hand;
-    display: inline-block !important;
-    border-radius: 4px !important;
-    padding: 4px 8px 4px 8px !important;
+.gradedWordsColorBg0{
     color: #ffffff !important;
     background-color:#145a32 !important;
 }
 
-.gradeColorBg1{
-    cursor: pointer;
-    cursor:hand;
-    display: inline-block !important;
-    border-radius: 4px !important;
-    padding: 4px 8px 4px 8px !important;
+.gradedWordsColorBg1{
+
     color: #ffffff !important;
     background-color:#7d6608 !important;
 }
 
-.gradeColorBg2{
-    cursor: pointer;
-    cursor:hand;
-    display: inline-block !important;
-    border-radius: 4px !important;
-    padding: 4px 8px 4px 8px !important;
+.gradedWordsColorBg2{
     color: #ffffff !important;
     background-color:#3498db !important;
 }
 
-.gradeColorBg3{
-    cursor: pointer;
-    cursor:hand;
-    display: inline-block !important;
-    border-radius: 4px !important;
-    padding: 4px 8px 4px 8px !important;
+.gradedWordsColorBg3{
     color: #ffffff !important;
     background-color:#a04000 !important;
 }
 
-.gradeColorBg4{
-    cursor: pointer;
-    cursor:hand;
-    display: inline-block !important;
-    border-radius: 4px !important;
-    padding: 4px 8px 4px 8px !important;
+.gradedWordsColorBg4{
     color: #ffffff !important;
     background-color:#4a235a !important;
 }
 
-.gradeColorBg5{
-    cursor: pointer;
-    cursor:hand;
-    display: inline-block !important;
-    border-radius: 4px !important;
-    padding: 4px 8px 4px 8px !important;
+.gradedWordsColorBg5{
     color: #ffffff !important;
     background-color:#641e16 !important;
 }
 
-/*********** this is the bg-color of the non-graded txt hint**********/
-.gradeColorBlackBg{
-    cursor: pointer;
-    cursor:hand;
-    display: inline-block !important;
-    border-radius: 4px !important;
-    padding: 4px 8px 4px 8px !important;
+.nonGradedWordsColorBg{
     color: #ffffff !important;
     background-color: #17202a !important;
 }
