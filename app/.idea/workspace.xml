@@ -4,30 +4,14 @@
     <list default="true" id="38777ea6-7a0e-4572-b85e-7a7f39ff896d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/input_txts/Flower_Rhymes_6.14Catherine_Stafford.edited.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_Grade_1_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_Grade_1_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_Grade_2_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_Grade_2_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_Grade_3_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_Grade_3_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_Kindergarten_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_Kindergarten_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_Not_Graded_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_Not_Graded_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_page_0_Grade_2_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_page_0_Grade_2_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_page_0_Kindergarten_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_page_0_Kindergarten_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_page_0_Not_Graded_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/greenpixie2021color-fkb_page_0_Not_Graded_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Grade_1_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Grade_1_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Grade_2_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Grade_2_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Grade_3_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Grade_3_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Kindergarten_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Kindergarten_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Not_Graded_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Not_Graded_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/graders/CreateDownloadableList.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/graders/CreateDownloadableList.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/input_txts/black_cat.docx" beforeDir="false" afterPath="$PROJECT_DIR$/media/input_txts/black_cat.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/output_txts/all_unique_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/all_unique_words.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/output_txts/black_cat_Grade_1_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/black_cat_Grade_1_words.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/output_txts/black_cat_Grade_2_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/black_cat_Grade_2_words.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/output_txts/black_cat_Grade_3_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/black_cat_Grade_3_words.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/output_txts/black_cat_Kindergarten_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/black_cat_Kindergarten_words.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/output_txts/black_cat_Not_Graded_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/black_cat_Not_Graded_words.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/graders/DocxGrader.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/graders/DocxGrader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/graders/PdfGrader.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/graders/PdfGrader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/graders/TxtGrader.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/graders/TxtGrader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/graders/grading_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/graders/grading_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/web/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/web/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/static/web/js/grader.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/static/web/js/grader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/web/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/web/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,34 +21,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/graders/CreateDownloadableList.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/static/web/css/home.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="81" column="21" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/graders/grading_functions.py">
+        <entry file="file://$PROJECT_DIR$/web/graders/DocxGrader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="86" column="50" lean-forward="true" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
+            <state relative-caret-position="207">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,7 +83,6 @@
         <option value="$PROJECT_DIR$/web/templates/web/delete.html" />
         <option value="$PROJECT_DIR$/web/utils/DeleteFiles.py" />
         <option value="$PROJECT_DIR$/web/templates/web/grader.html" />
-        <option value="$PROJECT_DIR$/web/graders/DocxGrader.py" />
         <option value="$PROJECT_DIR$/web/graders/PdfGrader.py" />
         <option value="$PROJECT_DIR$/web/graders/TxtGrader.py" />
         <option value="$PROJECT_DIR$/web/templates/web/home.html" />
@@ -131,6 +93,7 @@
         <option value="$PROJECT_DIR$/web/graders/CreateDownloadableList.py" />
         <option value="$PROJECT_DIR$/web/static/web/css/home.css" />
         <option value="$PROJECT_DIR$/web/graders/grading_functions.py" />
+        <option value="$PROJECT_DIR$/web/graders/DocxGrader.py" />
       </list>
     </option>
   </component>
@@ -168,23 +131,6 @@
             <path>
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-              <item name="input_txts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-              <item name="word_lists" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -192,48 +138,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="graders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -282,9 +186,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14535345" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14535345" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -295,7 +198,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3294702" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3294702" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.08443709" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.29304636" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3294702" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -387,9 +290,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/graders/DocxGrader.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1066">
@@ -427,12 +327,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/graders/CreateDownloadableList.py">
+    <entry file="file://$PROJECT_DIR$/web/graders/grading_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        <state relative-caret-position="63">
+          <caret line="86" column="50" lean-forward="true" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -444,12 +344,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/graders/grading_functions.py">
+    <entry file="file://$PROJECT_DIR$/web/graders/CreateDownloadableList.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="86" column="50" lean-forward="true" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
+        <state relative-caret-position="135">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/graders/DocxGrader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
