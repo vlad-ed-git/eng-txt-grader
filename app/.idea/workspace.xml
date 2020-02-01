@@ -3,21 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="38777ea6-7a0e-4572-b85e-7a7f39ff896d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/all_unique_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/all_unique_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/black_cat_Grade_1_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/black_cat_Grade_1_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/black_cat_Grade_2_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/black_cat_Grade_2_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/black_cat_Grade_3_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/black_cat_Grade_3_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/black_cat_Kindergarten_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/black_cat_Kindergarten_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/black_cat_Not_Graded_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/black_cat_Not_Graded_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Grade_1_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Grade_1_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Grade_2_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Grade_2_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Grade_3_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Grade_3_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Kindergarten_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Kindergarten_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Not_Graded_words.csv" beforeDir="false" afterPath="$PROJECT_DIR$/media/output_txts/the_clever_fox_Not_Graded_words.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/graders/CreateDownloadableList.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/graders/CreateDownloadableList.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/graders/grading_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/graders/grading_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -285,7 +270,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3294702" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3294702" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.80794704" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.049668875" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3294702" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
