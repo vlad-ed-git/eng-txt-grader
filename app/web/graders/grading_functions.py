@@ -76,7 +76,7 @@ def grade_txt(words_to_grade_as_list, form_crsf_input, input_file_name_no_ext):
 
     # get the grades
     word_lists_file_path = os.path.join(
-        settings.MEDIA_ROOT) + "/" + WORD_LISTS_TXTS_DIR_NAME + "/" + WORD_LISTS_FILE_NAME
+        settings.MEDIA_ROOT, WORD_LISTS_TXTS_DIR_NAME, WORD_LISTS_FILE_NAME)
     word_list_file = pd.read_excel(word_lists_file_path, sheet_name=None)
     grades = word_list_file.keys()
 

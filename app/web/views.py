@@ -18,7 +18,7 @@ def show_home_page(request, input_txts_notification=None, word_lists_notificatio
     input_txts_form = InputTextsForm()
     word_lists_form = WordListsForm()
 
-    input_texts = os.listdir(os.path.join(settings.MEDIA_ROOT) + "/input_txts/")
+    input_texts = os.listdir(os.path.join(settings.MEDIA_ROOT, "input_txts"))
 
     return render(request, 'web/home.html', {
         'input_texts': input_texts,
@@ -86,7 +86,7 @@ def ajax_grader(request):
     file_extension = file_name_components[-1].lower().strip()
     file_name_no_ext = file_name_components[0].lower().strip()
     form_crsf_input = getTokenInput(request)
-    input_file_path = os.path.join(settings.MEDIA_ROOT) + '\\' + INPUT_TXTS_DIR_NAME + '\\' + input_file_name
+    input_file_path = os.path.join(settings.MEDIA_ROOT, INPUT_TXTS_DIR_NAME, input_file_name)
     if file_extension == "txt":
         words_in_txt = TxtGrader.extract_words_from_txt_file(input_file_path)
         grade_results_html = grade_txt(words_to_grade_as_list=words_in_txt, form_crsf_input=form_crsf_input,
