@@ -12,13 +12,13 @@ def get_download_links(input_file_name_no_ext, words_per_grade, unique_words, fo
         for key, item in words_per_grade.items():
             counter += 1
             file_name = input_file_name_no_ext + "_" + key + "_words.csv"
-            df = DataFrame(list(item))
+            df = DataFrame(sorted(item))
             file_path = os.path.join(settings.MEDIA_ROOT, OUTPUT_TXTS_DIR_NAME, file_name.replace(" ", "_"))
             df.to_csv(file_path, index=None, header=True)
             html_form += get_html_download_form(form_crsf_input, file_path, file_name)
 
         # for all words
-        df2 = DataFrame(list(unique_words))
+        df2 = DataFrame(sorted(unique_words))
         unique_words_file_name = input_file_name_no_ext + "_all_unique_words.csv"
         unique_words_file_path = os.path.join(
             settings.MEDIA_ROOT, OUTPUT_TXTS_DIR_NAME, unique_words_file_name)
