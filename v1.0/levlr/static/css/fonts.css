@@ -1,0 +1,28 @@
+
+@font-face {
+  font-family: stylish_header;
+  src: url('../fonts/Skranji-Regular.ttf');
+}
+
+@font-face {
+  font-family: standard_header;
+  src: url('../fonts/Oswald-Regular.ttf');
+}
+
+@font-face {
+  font-family: paragraph;
+  src: url('../fonts/OpenSans-Regular.ttf');
+}
+
+
+.stylish_header_font {
+  font-family: stylish_header;
+}
+
+.standard_header_font{
+  font-family: standard_header;
+}
+
+.paragraph_font{
+  font-family: paragraph;
+}

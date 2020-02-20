@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}
+Levlr | Home
+{% endblock %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/web_app/css/home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/web_app/css/logged_in_home.css' %}">
+{% endblock %}
+
+
+{% block content %}
+{% load static %}
+<!-- body -->
+<!-- top header -->
+<header>
+    <!-- navbar-->
+    <div class="container">
+        <nav class="navbar">
+            <a class="navbar-brand blue_bg_img_color" href="{% url 'web_app:user_home' %}">
+                <img src="{% static '/web_app/images/logo.png' %}" width="30" height="30"
+                     class="d-inline-block align-top"
+                     alt="">
+                Levlr | <span class="red_bg_img_color">{{user_group}}</span> Home
+            </a>
+
+
+            <a class="btn_link red_bg_img_color_bg white_color standard_header_font" href="{% url 'web_app:log_out' %}">Sign
+                Out</a>
+
+        </nav>
+    </div>
+
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            {% if user_group == "Writers" %}
+            <h1 class="push_top_further medium_font stylish_header_font">
+                <span class="white_color">Upload</span> <span class="red_bg_img_color">New Document</span>
+            </h1>
+            <form enctype="multipart/form-data" method="post" action="{% url 'web_app:upload_doc' %}">
+                {% csrf_token %}
+                {% if input_txts_notification == "success" %}
+                <p class="blue_bg_img_color paragraph_font">
+                    Updated Successfully!
+                </p>
+                {% elif input_txts_notification == "fail" %}
+                <p class="red_color paragraph_font">
+                    Failed to Update!
+                </p>
+
+                {% elif input_txts_notification == "Permissions denied!" %}
+                <p class="red_color paragraph_font ">
+                    Please logout & login again to retry!
+                </p>
+                {% endif %}
+
+                <div class="form-group">
+
+                    {{ input_txts_form.as_p }}
+                    <p class="font-weight-light white_color paragraph_font">
+                        The file must be a <span class="red_bg_img_color">.pdf</span> , <span
+                            class="red_bg_img_color">.docx</span>
+                        or
+                        <span class="red_bg_img_color">.txt</span> file.
+                    </p>
+                </div>
+                <button type="submit" class="btn btn-primary blue_bg_img_color_bg standard_header_font"
+                        name="upload_btn" id="upload_btn">Upload
+                </button>
+            </form>
+
+
+            {% elif user_group == "Levelers" %}
+
+             <h1 class="push_top_further medium_font stylish_header_font">
+                <span class="white_color">@</span> <span class="red_bg_img_color">{{user}}</span>
+
+                 <p class="paragraph_font white_color" >
+                     Welcome <span class="red_bg_img_color" >back</span>. Here is a list of all of the documents currently uploaded by different Writers.
+                 </p>
+            </h1>
+
+
+            {% endif %}
+
+        </div>
+
+        <div class="col-sm-6">
+            <div class="push_top_further">
+
+                {% if action_message %}
+                <div class="alert alert-dismissible fade show paragraph_font blue_bg_img_color no_bg" role="alert">
+                    {{ action_message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endif %}
+
+                {% if user_group == "Writers" %}
+                <h1 class="medium_font stylish_header_font">
+                     <span class="white_color">@</span> <span class="red_bg_img_color">{{user}}</span><br/>
+                    <span class="white_color">Your</span> <span class="red_bg_img_color">Documents</span>
+                </h1>
+
+                {% elif user_group == "Levelers" %}
+                <h1 class="medium_font stylish_header_font">
+                    <span class="white_color">Uploaded</span> <span class="red_bg_img_color">Documents</span>
+                </h1>
+
+                {% endif %}
+                <ul class="list-group">
+                    {% if input_texts == "Empty" %}
+                    <div class="alert white_color_bg" role="alert">
+                        <h4 class="alert-heading stylish_header_font ">OOps, it's empty here!</h4>
+                        <p class="paragraph_font">It appears there are no text files to grade!</br>
+                            Use the <strong>upload form</strong> form on the left, to add new texts to grade.</br>
+                            Click <strong>browse</strong>, select the file from your computer, then click
+                            <strong>Upload</strong>.</p>
+                        <hr>
+                        <p class="mb-0 paragraph_font">Note that only .txt, .docx and .pdf files are supported.</br>*If your document
+                            is a
+                            .doc file, open it with an updated version of MS. Word and save it as a .docx file.</p>
+                    </div>
+
+                    {% elif input_texts %}
+                    {% for input_txt in input_texts %}
+                    <li class="list-group-item  list-group-item-action white_color paragraph_font">
+                        {{input_txt}}
+                        <a href="{% url 'web_app:grade_doc' input_txt %}" class="badge badge-primary">Grade</a>
+                        {% if user_group == "Writers" %}
+                        <a href="{% url 'web_app:delete_doc' input_txt %}" class="badge badge-danger">Delete</a>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+
+                    {% endif %}
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block js %}
+<!-- home javascript files -->
+
+{% endblock %}

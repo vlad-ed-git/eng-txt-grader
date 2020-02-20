@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}
+Levlr | Grading
+{% endblock %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/web_app/css/home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/web_app/css/logged_in_home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/web_app/css/grading_page.css' %}">
+{% endblock %}
+
+
+{% block content %}
+{% load static %}
+<!-- body -->
+<!-- top header -->
+<header>
+    <!-- navbar-->
+    <div class="container">
+        <nav class="navbar">
+            <a class="navbar-brand blue_bg_img_color" href="{% url 'web_app:home' %}">
+                <img src="{% static '/web_app/images/logo.png' %}" width="30" height="30"
+                     class="d-inline-block align-top"
+                     alt="">
+                Levlr | <span class="red_bg_img_color">{{user_group}}</span> Home
+            </a>
+
+        </nav>
+    </div>
+
+</header>
+
+<div class="container">
+     <div class="push_top_further">
+        <h1 class="medium_font stylish_header_font">
+            <span class="white_color">Grading</span> <span class="red_bg_img_color" id="grading_txt">{{txt_title}}</span>
+        </h1>
+        <p id="wait_hint" class="white_color paragraph_font">please wait...</p>
+        <div class="progress" id="progress_bar">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100"
+                 aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+        </div>
+        <p id="color_guide"></p>
+     </div>
+</div>
+
+
+<main class="container push_top">
+    <div class="row">
+
+        <div class="col-sm-12 col-md-4">
+            <p>
+                <button class="btn btn-primary stylish_header_font" type="button" data-toggle="collapse" data-target="#collapsible"
+                        aria-expanded="false" aria-controls="collapsible">
+                    Grading Results
+                </button>
+            </p>
+            <div class="collapse" id="collapsible">
+                <div class="card card-body" id="grading_results">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-8 " id="graded_txt">
+
+        </div>
+
+    </div>
+</main>
+
+
+{% load static %}
+
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{% static '/web_app/js/grader.js' %}"></script>
+{% endblock %}

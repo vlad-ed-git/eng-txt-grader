@@ -1,0 +1,174 @@
+#graded_txt,
+#grading_results{
+    background  : #fefefc !important;
+}
+
+.gradeBtns{
+    cursor: pointer;
+    cursor:hand;
+    display: inline-block !important;
+    border-radius: 4px !important;
+    padding: 4px 8px 4px 8px !important;
+}
+
+.downloadBtn{
+    font-size : 12px !important;
+    background : none !important;
+    border : #042224 1px solid !important;
+    border-radius : 0px !important;
+    color : #042224 !important;
+
+}
+
+.downloadBtn:focus,
+.downloadBtn:hover{
+    background : #00b4fd !important;
+    border : none !important;
+    border-radius : 0px !important;
+    color : #ffffff !important;
+
+}
+
+/*************************** add colors for grades / dark rainbow *********************/
+
+
+.gradedWordsColor11{
+    color:#ff0000 !important;
+}
+
+
+.gradedWordsColor10{
+    color:#ff0065 !important;
+}
+
+.gradedWordsColor9{
+    color: #ec3a8b !important;
+}
+
+
+.gradedWordsColor8{
+color: #a52a2a  !important;
+}
+
+.gradedWordsColor7{
+
+    color:#ff8000 !important;
+}
+
+.gradedWordsColor6{
+
+    color: #f19b14 !important;
+}
+
+.gradedWordsColor5{
+
+    color:#008000 !important;
+}
+
+.gradedWordsColor4{
+    color: #00cd00!important;
+}
+
+.gradedWordsColor3{
+
+    color:#0000ff !important;
+}
+
+.gradedWordsColor2{
+
+    color:#0080ff !important;
+}
+
+.gradedWordsColor1{
+
+    color:#4b0082 !important;
+}
+
+.gradedWordsColor0{
+
+    color:#e53fe5 !important;
+}
+
+
+
+.nonGradedWordsColor{
+    color: #a6a6ed !important;
+}
+
+/** LABELS ***/
+
+.gradedWordsColorBg11{
+    color: #ffffff !important;
+    background-color:#ff0000 !important;
+}
+
+
+.gradedWordsColorBg10{
+    color: #ffffff !important;
+    background-color:#ff0065 !important;
+}
+
+
+.gradedWordsColorBg9{
+    color: #ffffff !important;
+    background-color: #ec3a8b !important;
+}
+
+
+.gradedWordsColorBg8{
+   color: #ffffff !important;
+    background-color: #a52a2a  !important;
+}
+
+.gradedWordsColorBg7{
+
+    color: #ffffff !important;
+    background-color:#ff8000 !important;
+}
+
+.gradedWordsColorBg6{
+
+    color: #ffffff !important;
+    background-color: #f19b14 !important;
+}
+
+.gradedWordsColorBg5{
+
+    color: #ffffff !important;
+    background-color:#008000 !important;
+}
+
+.gradedWordsColorBg4{
+    color: #ffffff !important;
+    background-color: #00cd00!important;
+}
+
+.gradedWordsColorBg3{
+
+    color: #ffffff !important;
+    background-color:#0000ff !important;
+}
+
+.gradedWordsColorBg2{
+
+    color: #ffffff !important;
+    background-color:#0080ff !important;
+}
+
+.gradedWordsColorBg1{
+
+    color: #ffffff !important;
+    background-color:#4b0082 !important;
+}
+
+.gradedWordsColorBg0{
+
+    color: #ffffff !important;
+    background-color:#e53fe5 !important;
+}
+
+
+.nonGradedWordsColorBg{
+    color: #ffffff !important;
+    background-color: #a6a6ed !important;
+}

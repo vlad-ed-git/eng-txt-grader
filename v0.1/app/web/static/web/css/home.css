@@ -1,0 +1,90 @@
+label{
+    color: #17202a !important;
+    font-weight : bold !important;
+}
+
+.black{
+    color: #17202a !important;
+}
+
+.blue{
+    color:#0000ff !important;
+}
+
+
+.gradeBtns{
+    cursor: pointer;
+    cursor:hand;
+    display: inline-block !important;
+    border-radius: 4px !important;
+    padding: 4px 8px 4px 8px !important;
+}
+
+
+/*************************** add colors for grades *********************/
+
+.gradedWordsColor0{
+    color:#145a32 !important; #green shade
+}
+
+.gradedWordsColor1{
+    color:  #7d6608 !important; #yellow shade
+}
+
+.gradedWordsColor2{
+    color:#3498db !important; #blue shade
+}
+
+.gradedWordsColor3{
+ color:#a04000 !important; #brown shade
+}
+
+.gradedWordsColor4{
+ color:#4a235a !important; #purple shade
+}
+
+.gradedWordsColor5{
+ color: #641e16  !important; #red shade
+}
+
+.nonGradedWordsColor{
+    color: #17202a !important;
+}
+
+
+
+.gradedWordsColorBg0{
+    color: #ffffff !important;
+    background-color:#145a32 !important;
+}
+
+.gradedWordsColorBg1{
+
+    color: #ffffff !important;
+    background-color:#7d6608 !important;
+}
+
+.gradedWordsColorBg2{
+    color: #ffffff !important;
+    background-color:#3498db !important;
+}
+
+.gradedWordsColorBg3{
+    color: #ffffff !important;
+    background-color:#a04000 !important;
+}
+
+.gradedWordsColorBg4{
+    color: #ffffff !important;
+    background-color:#4a235a !important;
+}
+
+.gradedWordsColorBg5{
+    color: #ffffff !important;
+    background-color:#641e16 !important;
+}
+
+.nonGradedWordsColorBg{
+    color: #ffffff !important;
+    background-color: #17202a !important;
+}
