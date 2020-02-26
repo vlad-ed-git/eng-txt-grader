@@ -57,10 +57,11 @@ def prepare_legend(grades, special_words):
             grade_index) + '">' + grade + '</span>   '
     color_guide += '   <span id="nonGradedWordsColor" class="gradeBtns nonGradedWordsColorBg"> *Not Graded</span></p>'
 
-    special_words_guide = '<p class="white_color stylish_header_font"> Specials : '
+    special_words_guide = '<p class="dark_bg_img_color stylish_header_font"> Specials : '
     for special_word in special_words:
         special_words_guide = special_words_guide + '<kbd>' + str(special_word) + '</kbd> '
     special_words_guide += '</p>'
+    special_words_guide += '<p class="dark_bg_img_color stylish_header_font"> *Numeric characters are not considered words and do not affect the count. </p>'
     return color_guide + special_words_guide
 
 
@@ -89,8 +90,21 @@ def sort_words_per_by_grade(grades, unique_words, unsorted_words_per_grade):
             break
     return output_html_response
 
+def word_splitter(unchecked_words_to_grade_as_list):
+    words_to_grade_as_list = []
+    for word in unchecked_words_to_grade_as_list:
+        if "_" in word:
+            words_to_grade_as_list.extend(word.split("_"))
+        elif "-" in word:
+            words_to_grade_as_list.extend(word.split("-"))
+        elif "—" in word:
+            words_to_grade_as_list.extend(word.split("—"))
+        else:    
+            words_to_grade_as_list.append(word)
+    return words_to_grade_as_list
 
 def grade_txt(words_to_grade_as_list, form_crsf_input, input_file_name_no_ext):
+    proper_words_to_grade_as_list = word_splitter(words_to_grade_as_list)
     special_words = {'for': 0, 'and': 0, 'not': 0, 'but': 0, 'so': 0, 'or': 0}
     unique_words = set()
     total_word_count = 0
@@ -113,7 +127,7 @@ def grade_txt(words_to_grade_as_list, form_crsf_input, input_file_name_no_ext):
     output_html = "<p class = 'font-weight-bold'>"
     special_words_html_output = ""
 
-    for word_to_grade in words_to_grade_as_list:
+    for word_to_grade in proper_words_to_grade_as_list:
         # start the graded text
         graded_txt = ' <span class="nonGradedWordsColor">' + word_to_grade + '</span>'
 
@@ -124,7 +138,14 @@ def grade_txt(words_to_grade_as_list, form_crsf_input, input_file_name_no_ext):
             commas_per_sentence[total_sentences] += 1
 
         # grade actual word
-        true_word_only_letters = "".join([c if c.isalpha() else "" for c in lower_stripped_word])
+        true_word_only_letters = ""
+        for c in lower_stripped_word:
+            if (c == "’") or (c == "‘") or (c == "'"):
+                true_word_only_letters += "'"
+            if (c.isalpha()):
+                true_word_only_letters += c
+                
+
         if len(true_word_only_letters) >= 1:
             words_per_sentence[total_sentences] += 1
             total_word_count += 1
@@ -144,7 +165,9 @@ def grade_txt(words_to_grade_as_list, form_crsf_input, input_file_name_no_ext):
                 for col_name in word_list_file[grade]:
                     grade_words = word_list_file[grade][col_name]
                     for grade_word in grade_words:
-                        if true_word_only_letters == str(grade_word).lower().strip():
+                        a_grade_word = "".join([c if c.isalpha() else "" for c in str(grade_word) ])
+                        a_true_word_only_letters = true_word_only_letters.replace("'", "")
+                        if a_true_word_only_letters == a_grade_word.lower().strip():
                             # grade the found word
                             graded_txt = ' <span class="gradedWordsColor' + str(
                                 grade_index) + '">' + word_to_grade + '</span>'
@@ -161,7 +184,7 @@ def grade_txt(words_to_grade_as_list, form_crsf_input, input_file_name_no_ext):
                             already_graded = True
 
         # check for end of sentence
-        if "." in word_to_grade or "!" in word_to_grade or ":" in word_to_grade or "?" in word_to_grade:
+        if "." in word_to_grade or "!" in word_to_grade or "?" in word_to_grade:
             graded_txt += "<br><span class='badge blue_bg_img_color_bg white_color paragraph_font'>" + str(
                 words_per_sentence[total_sentences]) + " words " + str(
                 commas_per_sentence[total_sentences]) + " commas " + str(
@@ -181,10 +204,13 @@ def grade_txt(words_to_grade_as_list, form_crsf_input, input_file_name_no_ext):
     avg_words_per_sentence = get_avg_in_dictionary(words_per_sentence)
     max_words_in_sentence = get_max_in_dictionary(words_per_sentence)
     min_words_in_sentence = get_min_in_dictionary(words_per_sentence)
+    unique_to_all_words_ratio = str(round(((len(unique_words) / total_word_count) * 100),2)) 
     grading_output_html = "<p class='dark_bg_img_color paragraph_font' >Total Word Count: <span class='badge " \
                           "blue_bg_img_color'>" + str(total_word_count) + "</span></p> "
     grading_output_html += "<p class='dark_bg_img_color paragraph_font' >Unique Words Count: <span class='badge " \
                            "blue_bg_img_color'>" + str(len(unique_words)) + "</span></p> "
+    grading_output_html += "<p class='dark_bg_img_color paragraph_font' >Unique / Total Ratio: <span class='badge " \
+                           "blue_bg_img_color'>" + unique_to_all_words_ratio + " % </span></p> "                       
     grading_output_html += "<p class='dark_bg_img_color paragraph_font' >Sentences: <span class='badge " \
                            "blue_bg_img_color'>" + str(total_sentences) + "</span></p> "
     grading_output_html += "<p class='dark_bg_img_color paragraph_font' >Average number of words per sentence: " \

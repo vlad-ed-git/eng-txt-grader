@@ -18,7 +18,7 @@ Levlr | Home
     <!-- navbar-->
     <div class="container">
         <nav class="navbar">
-            <a class="navbar-brand" href="{% url 'web_app:home' %}">
+            <a class="navbar-brand stylish_header_font" href="{% url 'web_app:home' %}">
                 <img src="{% static '/web_app/images/logo.png' %}" width="30" height="30"
                      class="d-inline-block align-top"
                      alt="">
@@ -33,14 +33,14 @@ Levlr | Home
     <div class="row">
         <div class="col-sm-6">
             <h1 class="push_top large_font stylish_header_font">
-                <span class="white_color">Welcome</span> <span class="red_bg_img_color">home</span>
+                <span class="dark_bg_img_color">Welcome</span> <span class="red_bg_img_color">home</span>
             </h1>
-            <p class="white_color paragraph_font">
+            <p class="dark_bg_img_color paragraph_font">
                 Levlr is a document scanning programming which assists professional and amateur book levelers by
                 suggesting the reading-level of the document, from Kindergarten to Grade 10.
             </p>
 
-            <p class="white_color paragraph_font">
+            <p class="dark_bg_img_color paragraph_font">
                 Click <span class="red_bg_img_color">grade</span> to view sample results.
             </p>
 
@@ -53,7 +53,7 @@ Levlr | Home
         <div class="col-sm-1"></div>
         <div class="col-sm-5">
             <h1 class="push_top_further medium_font stylish_header_font">
-                <span class="white_color">Members</span> <span class="red_bg_img_color">Sign In</span>
+                <span class="dark_bg_img_color">Members</span> <span class="red_bg_img_color">Sign In</span>
             </h1>
             {% if sign_in_error %}
             <p class="red_color paragraph_font ">{{sign_in_error}}</p>
@@ -62,7 +62,7 @@ Levlr | Home
             <form method="post" action="{% url 'web_app:login' %}">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="user_name" class="white_color standard_header_font">Username</label>
+                    <label for="user_name" class="dark_bg_img_color standard_header_font">Username</label>
                     <input type="text" class="form-control white_color_bg paragraph_font" name="user_name" id="user_name"
                            aria-describedby="usernameHelp">
                     <small id="usernameHelp" class="form-text text-muted paragraph_font">*New? Contact the admin to
@@ -70,7 +70,7 @@ Levlr | Home
                     </small>
                 </div>
                 <div class="form-group">
-                    <label for="user_password" class="white_color standard_header_font">Password</label>
+                    <label for="user_password" class="dark_bg_img_color standard_header_font">Password</label>
                     <input type="password" class="form-control white_color_bg paragraph_font" name="user_password" id="user_password">
                 </div>
                 <button type="submit" class="btn btn-primary blue_bg_img_color_bg standard_header_font"

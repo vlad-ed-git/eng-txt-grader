@@ -1,0 +1,26 @@
+.push_top_further{
+    margin-top : 70px !important;
+}
+
+.push_top{
+    margin-top : 50px !important;
+}
+
+.large_font{
+    font-size : 72px !important;
+}
+
+.medium_font{
+    font-size : 18px !important;
+}
+
+.btn_link{
+    padding : 4px 12px 4px 12px !important;
+    border-radius : 12px !important;
+}
+
+.btn_link:hover,
+.btn_link:focus{
+    color :  #042224!important;
+}
+

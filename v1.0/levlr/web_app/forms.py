@@ -1,6 +1,6 @@
 from django import forms
 from .models import InputTexts
-
+from django.contrib.auth.models import User
 
 class InputTextsForm(forms.ModelForm):
     class Meta:
@@ -13,3 +13,10 @@ class InputTextsForm(forms.ModelForm):
         widgets = {
             'created_by': forms.TextInput(attrs={'disabled': 'disabled'}),
         }
+
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+    
+    class Meta():
+        model = User
+        fields = ('password',)

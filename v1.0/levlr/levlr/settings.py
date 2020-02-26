@@ -16,20 +16,26 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
+SITE_CONFIG_DIR_NAME = 'site_config'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-sk_file = open('site_config/sk.txt', 'r')
+sk_file_path = os.path.join(BASE_DIR, SITE_CONFIG_DIR_NAME, 'sk.txt')
+sk_file = open(sk_file_path, 'r')
 sk = sk_file.readline()
 sk_file.close()
 SECRET_KEY = sk
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.levlr.site', 'levlr.site']
+
 
 # Application definition
 
@@ -77,19 +83,22 @@ WSGI_APPLICATION = 'levlr.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 # set the database name
-dn_file = open('site_config/dn.txt', 'r')
+dn_file_path = os.path.join(BASE_DIR, SITE_CONFIG_DIR_NAME, 'dn.txt')
+dn_file = open(dn_file_path, 'r')
 dn = dn_file.readline()
 dn_file.close()
 DB_NAME = dn
 
 # set the user name
-un_file = open('site_config/un.txt', 'r')
+un_file_path = os.path.join(BASE_DIR, SITE_CONFIG_DIR_NAME, 'un.txt')
+un_file = open(un_file_path, 'r')
 un = un_file.readline()
 un_file.close()
 USER_NAME = un
 
 # set the password
-pw_file = open('site_config/pw.txt', 'r')
+pw_file_path = os.path.join(BASE_DIR, SITE_CONFIG_DIR_NAME, 'pw.txt')
+pw_file = open(pw_file_path, 'r')
 pw = pw_file.readline()
 pw_file.close()
 PW = pw
@@ -143,13 +152,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'https://www.levlr.site/levlr/collected_assets/'
 
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 
-MEDIA_URL = '/media/'
+MEDIA_URL =  'https://www.levlr.site/levlr/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

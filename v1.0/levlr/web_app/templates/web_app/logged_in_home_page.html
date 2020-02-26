@@ -19,7 +19,7 @@ Levlr | Home
     <!-- navbar-->
     <div class="container">
         <nav class="navbar">
-            <a class="navbar-brand blue_bg_img_color" href="{% url 'web_app:user_home' %}">
+            <a class="navbar-brand blue_bg_img_color stylish_header_font" href="{% url 'web_app:user_home' %}">
                 <img src="{% static '/web_app/images/logo.png' %}" width="30" height="30"
                      class="d-inline-block align-top"
                      alt="">
@@ -40,9 +40,9 @@ Levlr | Home
         <div class="col-sm-6">
             {% if user_group == "Writers" %}
             <h1 class="push_top_further medium_font stylish_header_font">
-                <span class="white_color">Upload</span> <span class="red_bg_img_color">New Document</span>
+                <span class="dark_bg_img_color">Upload</span> <span class="red_bg_img_color">New Document</span>
             </h1>
-            <form enctype="multipart/form-data" method="post" action="{% url 'web_app:upload_doc' %}">
+            <form enctype="multipart/form-data" method="post" action="{% url 'web_app:home_actions' "upload_document" %}">
                 {% csrf_token %}
                 {% if input_txts_notification == "success" %}
                 <p class="blue_bg_img_color paragraph_font">
@@ -62,7 +62,7 @@ Levlr | Home
                 <div class="form-group">
 
                     {{ input_txts_form.as_p }}
-                    <p class="font-weight-light white_color paragraph_font">
+                    <p class="font-weight-light dark_bg_img_color paragraph_font">
                         The file must be a <span class="red_bg_img_color">.pdf</span> , <span
                             class="red_bg_img_color">.docx</span>
                         or
@@ -78,15 +78,49 @@ Levlr | Home
             {% elif user_group == "Levelers" %}
 
              <h1 class="push_top_further medium_font stylish_header_font">
-                <span class="white_color">@</span> <span class="red_bg_img_color">{{user}}</span>
+                <span class="dark_bg_img_color">@</span> <span class="red_bg_img_color">{{user}}</span>
 
-                 <p class="paragraph_font white_color" >
+                 <p class="paragraph_font dark_bg_img_color" >
                      Welcome <span class="red_bg_img_color" >back</span>. Here is a list of all of the documents currently uploaded by different Writers.
                  </p>
             </h1>
 
 
             {% endif %}
+
+            <h1 class="push_top_further medium_font stylish_header_font">
+                <span class="dark_bg_img_color">Password</span> <span class="red_bg_img_color">Update</span>
+            </h1>
+            {% if sign_in_error %}
+            <p class="red_color paragraph_font ">{{sign_in_error}}</p>
+            {% endif %}
+
+            {% if update_password_msg %}
+                {% if update_password_msg == "Your password has been updated!" %}
+                <div class="alert alert-dismissible fade show paragraph_font blue_bg_img_color no_bg" role="alert">
+                 {% else %}   
+                 <div class="alert alert-dismissible fade show paragraph_font red_bg_img_color no_bg" role="alert">
+                 {% endif %}  
+                    {{ update_password_msg }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endif %}
+            <form method="post" action="{% url 'web_app:home_actions'  "update_password" %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="password" class="dark_bg_img_color standard_header_font">New Password</label>
+                    <input type="password" class="form-control white_color_bg paragraph_font" name="password" id="password">
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password" class="dark_bg_img_color standard_header_font">Confirm Password</label>
+                    <input type="password" class="form-control white_color_bg paragraph_font" name="confirm_password" id="confirm_password">
+                </div>
+                <button type="submit" class="btn btn-primary blue_bg_img_color_bg standard_header_font"
+                        name="update_password_btn" id="update_password_btn">Update
+                </button>
+            </form>
 
         </div>
 
@@ -104,19 +138,19 @@ Levlr | Home
 
                 {% if user_group == "Writers" %}
                 <h1 class="medium_font stylish_header_font">
-                     <span class="white_color">@</span> <span class="red_bg_img_color">{{user}}</span><br/>
-                    <span class="white_color">Your</span> <span class="red_bg_img_color">Documents</span>
+                     <span class="dark_bg_img_color">@</span> <span class="red_bg_img_color">{{user}}</span><br/>
+                    <span class="dark_bg_img_color">Your</span> <span class="red_bg_img_color">Documents</span>
                 </h1>
 
                 {% elif user_group == "Levelers" %}
                 <h1 class="medium_font stylish_header_font">
-                    <span class="white_color">Uploaded</span> <span class="red_bg_img_color">Documents</span>
+                    <span class="dark_bg_img_color">Uploaded</span> <span class="red_bg_img_color">Documents</span>
                 </h1>
 
                 {% endif %}
                 <ul class="list-group">
                     {% if input_texts == "Empty" %}
-                    <div class="alert white_color_bg" role="alert">
+                    <div class="alert dark_bg_img_color_bg" role="alert">
                         <h4 class="alert-heading stylish_header_font ">OOps, it's empty here!</h4>
                         <p class="paragraph_font">It appears there are no text files to grade!</br>
                             Use the <strong>upload form</strong> form on the left, to add new texts to grade.</br>
@@ -130,7 +164,7 @@ Levlr | Home
 
                     {% elif input_texts %}
                     {% for input_txt in input_texts %}
-                    <li class="list-group-item  list-group-item-action white_color paragraph_font">
+                    <li class="list-group-item  list-group-item-action dark_bg_img_color paragraph_font">
                         {{input_txt}}
                         <a href="{% url 'web_app:grade_doc' input_txt %}" class="badge badge-primary">Grade</a>
                         {% if user_group == "Writers" %}

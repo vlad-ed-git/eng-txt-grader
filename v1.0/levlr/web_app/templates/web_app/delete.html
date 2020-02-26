@@ -19,7 +19,7 @@ Levlr | Confirm Deletion
     <!-- navbar-->
     <div class="container">
         <nav class="navbar">
-            <a class="navbar-brand blue_bg_img_color" href="{% url 'web_app:user_home' %}">
+            <a class="navbar-brand blue_bg_img_color stylish_header_font" href="{% url 'web_app:user_home' %}">
                 <img src="{% static '/web_app/images/logo.png' %}" width="30" height="30"
                      class="d-inline-block align-top"
                      alt="">
@@ -39,9 +39,9 @@ Levlr | Confirm Deletion
 <div class="container">
      <div class="push_top_further">
         <h1 class="medium_font stylish_header_font">
-            <span class="white_color">Confirm</span> <span class="red_bg_img_color">Deletion</span>
+            <span class="dark_bg_img_color">Confirm</span> <span class="red_bg_img_color">Deletion</span>
         </h1>
-        <p class="white_color paragraph_font">Are you sure you want to delete <span id="grading_txt" class="blue_bg_img_color">{{txt_title}}</span> ?</p>
+        <p class="dark_bg_img_color paragraph_font">Are you sure you want to delete <span id="grading_txt" class="blue_bg_img_color">{{txt_title}}</span> ?</p>
         <a href="{% url 'web_app:delete_confirmation' txt_title %}" class="badge badge-danger">Yes! Delete</a>
 
         <a href="{% url 'web_app:user_home' %}" class="badge badge-info">No! Go Back</a>
